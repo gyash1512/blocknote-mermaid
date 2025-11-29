@@ -1,1 +1,1 @@
-export {MermaidBlock, insertMermaid} from "./MermaidBlock"
+export { MermaidBlock, insertMermaid } from "./MermaidBlock";

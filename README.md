@@ -18,7 +18,7 @@ Mermaid feature for [Blocknote](https://www.blocknotejs.org/).
 Get the package
 
 ```shell
-$ yarn add @defensestation/blocknote-mermaid
+$ yarn add blocknote-mermaid
 ```
 
 
@@ -28,7 +28,7 @@ $ yarn add @defensestation/blocknote-mermaid
 Include module at your application
 
 ```javascript
-import { MermaidBlock, insertMermaid } from "@defensestation/blocknote-mermaid";
+import { MermaidBlock, insertMermaid } from "blocknote-mermaid";
 ```
 
 Create schema with mermaid block.

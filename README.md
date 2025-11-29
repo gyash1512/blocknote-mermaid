@@ -1,67 +1,169 @@
-# Mermaid for Blocknote
+# BlockNote Mermaid
 
+![BlockNote Mermaid Banner](public/banner.svg)
+
+[![npm version](https://img.shields.io/npm/v/blocknote-mermaid.svg)](https://www.npmjs.com/package/blocknote-mermaid)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 ![Stability Badge](https://img.shields.io/badge/stability-stable-green.svg)
-![](https://badgen.net/badge/Version/v1.0.0/blue)
 
-Mermaid feature for [Blocknote](https://www.blocknotejs.org/).
+A powerful Mermaid diagram plugin for [BlockNote](https://www.blocknotejs.org/) editor. Create beautiful flowcharts, sequence diagrams, Gantt charts, and more directly in your BlockNote editor.
 
-![](assets/demo.gif)
 
-## Demo
 
-[A demo is worth a thousand words](https://codesandbox.io/p/devbox/blocknote-mermaid-rvvddc?layout=%257B%2522sidebarPanel%2522%253A%2522EXPLORER%2522%252C%2522rootPanelGroup%2522%253A%257B%2522direction%2522%253A%2522horizontal%2522%252C%2522contentType%2522%253A%2522UNKNOWN%2522%252C%2522type%2522%253A%2522PANEL_GROUP%2522%252C%2522id%2522%253A%2522ROOT_LAYOUT%2522%252C%2522panels%2522%253A%255B%257B%2522type%2522%253A%2522PANEL_GROUP%2522%252C%2522contentType%2522%253A%2522UNKNOWN%2522%252C%2522direction%2522%253A%2522vertical%2522%252C%2522id%2522%253A%2522clv4g4hsv00062v6dygfbdqi6%2522%252C%2522sizes%2522%253A%255B70%252C30%255D%252C%2522panels%2522%253A%255B%257B%2522type%2522%253A%2522PANEL_GROUP%2522%252C%2522contentType%2522%253A%2522EDITOR%2522%252C%2522direction%2522%253A%2522horizontal%2522%252C%2522id%2522%253A%2522EDITOR%2522%252C%2522panels%2522%253A%255B%257B%2522type%2522%253A%2522PANEL%2522%252C%2522contentType%2522%253A%2522EDITOR%2522%252C%2522id%2522%253A%2522clv4g4hsu00022v6d19eg61e6%2522%257D%255D%257D%252C%257B%2522type%2522%253A%2522PANEL_GROUP%2522%252C%2522contentType%2522%253A%2522SHELLS%2522%252C%2522direction%2522%253A%2522horizontal%2522%252C%2522id%2522%253A%2522SHELLS%2522%252C%2522panels%2522%253A%255B%257B%2522type%2522%253A%2522PANEL%2522%252C%2522contentType%2522%253A%2522SHELLS%2522%252C%2522id%2522%253A%2522clv4g4hsu00042v6dx5wpc3dh%2522%257D%255D%252C%2522sizes%2522%253A%255B100%255D%257D%255D%257D%252C%257B%2522type%2522%253A%2522PANEL_GROUP%2522%252C%2522contentType%2522%253A%2522DEVTOOLS%2522%252C%2522direction%2522%253A%2522vertical%2522%252C%2522id%2522%253A%2522DEVTOOLS%2522%252C%2522panels%2522%253A%255B%257B%2522type%2522%253A%2522PANEL%2522%252C%2522contentType%2522%253A%2522DEVTOOLS%2522%252C%2522id%2522%253A%2522clv4g4hsu00052v6ddeo7l7gv%2522%257D%255D%252C%2522sizes%2522%253A%255B100%255D%257D%255D%252C%2522sizes%2522%253A%255B50%252C50%255D%257D%252C%2522tabbedPanels%2522%253A%257B%2522clv4g4hsu00022v6d19eg61e6%2522%253A%257B%2522tabs%2522%253A%255B%257B%2522id%2522%253A%2522clv4g4hsu00012v6dxpe35813%2522%252C%2522mode%2522%253A%2522permanent%2522%252C%2522type%2522%253A%2522FILE%2522%252C%2522filepath%2522%253A%2522%252Fpackage.json%2522%252C%2522state%2522%253A%2522IDLE%2522%257D%255D%252C%2522id%2522%253A%2522clv4g4hsu00022v6d19eg61e6%2522%252C%2522activeTabId%2522%253A%2522clv4g4hsu00012v6dxpe35813%2522%257D%252C%2522clv4g4hsu00052v6ddeo7l7gv%2522%253A%257B%2522id%2522%253A%2522clv4g4hsu00052v6ddeo7l7gv%2522%252C%2522activeTabId%2522%253A%2522clv4g4yfx006m2v6dys4liyhz%2522%252C%2522tabs%2522%253A%255B%257B%2522type%2522%253A%2522TASK_PORT%2522%252C%2522taskId%2522%253A%2522Development%2522%252C%2522port%2522%253A5173%252C%2522id%2522%253A%2522clv4g4yfx006m2v6dys4liyhz%2522%252C%2522mode%2522%253A%2522permanent%2522%252C%2522path%2522%253A%2522%252F%2522%257D%255D%257D%252C%2522clv4g4hsu00042v6dx5wpc3dh%2522%253A%257B%2522id%2522%253A%2522clv4g4hsu00042v6dx5wpc3dh%2522%252C%2522activeTabId%2522%253A%2522clv4g4vis005i2v6dlh9dpd8e%2522%252C%2522tabs%2522%253A%255B%257B%2522id%2522%253A%2522clv4g4hsu00032v6d8a3t4hne%2522%252C%2522mode%2522%253A%2522permanent%2522%252C%2522type%2522%253A%2522TERMINAL%2522%252C%2522shellId%2522%253A%2522clv4g4jeq000idaf86r024r97%2522%257D%252C%257B%2522type%2522%253A%2522TASK_LOG%2522%252C%2522taskId%2522%253A%2522Development%2522%252C%2522id%2522%253A%2522clv4g4vis005i2v6dlh9dpd8e%2522%252C%2522mode%2522%253A%2522permanent%2522%257D%255D%257D%257D%252C%2522showDevtools%2522%253Atrue%252C%2522showShells%2522%253Atrue%252C%2522showSidebar%2522%253Atrue%252C%2522sidebarPanelSize%2522%253A15%257D)
+##  Features
 
-## Installation
+- 📊 **Multiple Diagram Types** - Flowcharts, Sequence diagrams, Gantt charts, Class diagrams, State diagrams, ER diagrams, and more
+- 🎨 **Live Preview** - See your diagrams render in real-time as you type
+- 📝 **Code Editor** - Syntax-highlighted Mermaid code editor with CodeMirror
+- 📋 **Built-in Templates** - Quick-start templates for all diagram types
+- 🔍 **Zoom & Pan** - Interactive diagram viewing with zoom controls and panning
+- 📥 **Export to SVG** - Download your diagrams as SVG files
+- 🔒 **Lock Mode** - Lock diagrams to prevent accidental edits
+- 📁 **Collapsible** - Collapse diagrams to save space
+- 📱 **Responsive** - Adapts to container width automatically
+- 🎯 **Full Screen** - View diagrams in fullscreen mode
 
-### Install via YARN
+## 🚀 Installation
 
-Get the package
+```bash
+# Using npm
+npm install blocknote-mermaid
 
-```shell
-$ yarn add blocknote-mermaid
+# Using yarn
+yarn add blocknote-mermaid
+
+# Using pnpm
+pnpm add blocknote-mermaid
 ```
 
+### Peer Dependencies
 
+Make sure you have these peer dependencies installed:
 
-## Usage
+```bash
+npm install @blocknote/core @blocknote/react @blocknote/mantine react react-dom react-icons @uiw/react-codemirror
+```
 
-Include module at your application
+## 📖 Usage
 
-```javascript
+### Basic Setup
+
+```tsx
+import { BlockNoteSchema, defaultBlockSpecs } from "@blocknote/core";
+import { BlockNoteView } from "@blocknote/mantine";
+import { useCreateBlockNote, SuggestionMenuController, getDefaultReactSlashMenuItems } from "@blocknote/react";
 import { MermaidBlock, insertMermaid } from "blocknote-mermaid";
-```
 
-Create schema with mermaid block.
-```javascript
+// Create schema with mermaid block
 const schema = BlockNoteSchema.create({
   blockSpecs: {
     ...defaultBlockSpecs,
     mermaid: MermaidBlock,
   },
 });
+
+function Editor() {
+  const editor = useCreateBlockNote({ schema });
+
+  return (
+    <BlockNoteView editor={editor} slashMenu={false}>
+      <SuggestionMenuController
+        triggerCharacter="/"
+        getItems={async (query) =>
+          filterSuggestionItems(
+            [...getDefaultReactSlashMenuItems(editor), insertMermaid()],
+            query
+          )
+        }
+      />
+    </BlockNoteView>
+  );
+}
 ```
 
-Add slash menu item.
-```javascript
-<BlockNoteView
-    editor={editor}
-    slashMenu={false}
-  >
-    <SuggestionMenuController
-      triggerCharacter={"/"}
-      getItems={async (query) =>
-        filterSuggestionItems(
-          [...getDefaultReactSlashMenuItems(editor), insertMermaid()],
-          query
-        )
-      }
-    />
-  </BlockNoteView>
+### Using the Mermaid Block
+
+Once integrated, you can:
+
+1. Type `/mermaid` in the editor to insert a new Mermaid block
+2. Use the code editor to write your Mermaid diagram code
+3. Click on templates to quickly get started with different diagram types
+4. Use the toolbar to zoom, pan, download, or toggle fullscreen
+
+### Supported Diagram Types
+
+- **Flowchart** - Process flows, decision trees
+- **Sequence Diagram** - API calls, user interactions
+- **Class Diagram** - Object-oriented design
+- **State Diagram** - State machines
+- **Entity Relationship** - Database schemas
+- **Gantt Chart** - Project timelines
+- **Pie Chart** - Data distribution
+- **Mind Map** - Brainstorming
+- **Git Graph** - Branch visualizations
+- **And more...**
+
+## 🎨 Example Diagrams
+
+### Flowchart
+
+```mermaid
+flowchart TD
+    A[Start] --> B{Is it working?}
+    B -->|Yes| C[Great!]
+    B -->|No| D[Debug]
+    D --> B
 ```
 
-## Roadmap
+### Sequence Diagram
 
-- [ ] Custom styles
-- [ ] Chart viewer in read only mode.
+```mermaid
+sequenceDiagram
+    participant User
+    participant API
+    participant Database
+    
+    User->>API: Request Data
+    API->>Database: Query
+    Database-->>API: Results
+    API-->>User: Response
+```
 
+## 🔧 Configuration
 
+The Mermaid block accepts the following props:
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `data` | `string` | Default flowchart | The Mermaid diagram code |
+| `title` | `string` | "Untitled Diagram" | Title of the diagram |
+| `collapsed` | `"true" \| "false"` | `"false"` | Whether the block is collapsed |
+| `locked` | `"true" \| "false"` | `"false"` | Whether editing is locked |
+
+## 🤝 Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 🙏 Acknowledgments
+
+- [BlockNote](https://www.blocknotejs.org/) - The amazing block-based editor
+- [Mermaid](https://mermaid.js.org/) - Diagram and charting tool
+- [CodeMirror](https://codemirror.net/) - Code editor component
+
+## 📬 Support
+
+If you have any questions or issues, please open an issue on GitHub.
+
+---
+
+Made with ❤️ by [Yash Gupta](https://github.com/gyash1512)

@@ -1,6 +1,15 @@
-export const MERMAID_EXAMPLES = [
+export interface MermaidExample {
+  name: string;
+  description: string;
+  category: string;
+  code: string;
+}
+
+export const MERMAID_EXAMPLES: MermaidExample[] = [
     {
-      name: "Sequence",
+      name: "Sequence Diagram",
+      description: "Show interactions between processes",
+      category: "Flow",
       code: `sequenceDiagram
       Alice->>+John: Hello John, how are you?
       Alice->>+John: John, can you hear me?
@@ -8,7 +17,9 @@ export const MERMAID_EXAMPLES = [
       John-->>-Alice: I feel great!`,
     },
     {
-      name: "Flow",
+      name: "Flowchart",
+      description: "Visualize workflows and processes",
+      category: "Flow",
       code: `flowchart TD
       A[Christmas] -->|Get money| B(Go shopping)
       B --> C{Let me think}
@@ -17,7 +28,9 @@ export const MERMAID_EXAMPLES = [
       C -->|Three| F[fa:fa-car Car]`,
     },
     {
-      name: "Class",
+      name: "Class Diagram",
+      description: "Model object-oriented structures",
+      category: "Structure",
       code: `classDiagram
       Animal <|-- Duck
       Animal <|-- Fish
@@ -41,7 +54,9 @@ export const MERMAID_EXAMPLES = [
       }`,
     },
     {
-      name: "State",
+      name: "State Diagram",
+      description: "Represent system states and transitions",
+      category: "Flow",
       code: `stateDiagram-v2
       [*] --> Still
       Still --> [*]
@@ -51,7 +66,9 @@ export const MERMAID_EXAMPLES = [
       Crash --> [*]`,
     },
     {
-      name: "ER",
+      name: "Entity Relationship",
+      description: "Database schema visualization",
+      category: "Structure",
       code: `erDiagram
       CUSTOMER }|..|{ DELIVERY-ADDRESS : has
       CUSTOMER ||--o{ ORDER : places
@@ -63,7 +80,9 @@ export const MERMAID_EXAMPLES = [
       PRODUCT ||--o{ ORDER-ITEM : "ordered in"`,
     },
     {
-      name: "Gantt",
+      name: "Gantt Chart",
+      description: "Project timeline and scheduling",
+      category: "Timeline",
       code: `gantt
       title A Gantt Diagram
       dateFormat  YYYY-MM-DD
@@ -76,6 +95,8 @@ export const MERMAID_EXAMPLES = [
     },
     {
       name: "User Journey",
+      description: "Map user experience flows",
+      category: "Flow",
       code: `journey
       title My working day
       section Go to work
@@ -87,7 +108,9 @@ export const MERMAID_EXAMPLES = [
         Sit down: 3: Me`,
     },
     {
-      name: "Git",
+      name: "Git Graph",
+      description: "Visualize git branching",
+      category: "Timeline",
       code: `gitGraph
       commit
       commit
@@ -101,14 +124,18 @@ export const MERMAID_EXAMPLES = [
       commit`,
     },
     {
-      name: "Pie",
+      name: "Pie Chart",
+      description: "Data distribution visualization",
+      category: "Charts",
       code: `pie title Pets adopted by volunteers
       "Dogs" : 386
       "Cats" : 85
       "Rats" : 15`,
     },
     {
-      name: "Mindmap",
+      name: "Mind Map",
+      description: "Organize ideas hierarchically",
+      category: "Structure",
       code: `mindmap
       root((mindmap))
         Origins
@@ -128,7 +155,9 @@ export const MERMAID_EXAMPLES = [
           Mermaid`,
     },
     {
-      name: "QuadrantChart",
+      name: "Quadrant Chart",
+      description: "Compare items on two dimensions",
+      category: "Charts",
       code: `quadrantChart
       title Reach and engagement of campaigns
       x-axis Low Reach --> High Reach
@@ -145,7 +174,9 @@ export const MERMAID_EXAMPLES = [
       Campaign F: [0.35, 0.78]`,
     },
     {
-      name: "XYChart",
+      name: "XY Chart",
+      description: "Line and bar chart visualization",
+      category: "Charts",
       code: `
       xychart-beta
       title "Sales Revenue"

@@ -7,6 +7,23 @@ import { fileURLToPath } from "node:url";
 import { glob } from "glob";
 import pkg from "./package.json";
 
+// All packages to externalize (don't bundle)
+const externalPackages = [
+  ...Object.keys(pkg.dependencies || {}),
+  ...Object.keys(pkg.peerDependencies || {}),
+  // Also externalize react submodules
+  'react',
+  'react-dom',
+  'react/jsx-runtime',
+  'react/jsx-dev-runtime',
+  'react-dom/client',
+  // Externalize react-icons and its submodules
+  'react-icons',
+  // Externalize @uiw packages
+  '@uiw/codemirror-extensions-langs',
+  '@uiw/react-codemirror',
+];
+
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react(), libInjectCss(), dts({ include: ["lib"] })],
@@ -17,11 +34,10 @@ export default defineConfig({
       formats: ["es"],
     },
     rollupOptions: {
-      external: Object.keys({
-        ...pkg.dependencies,
-        ...pkg.peerDependencies,
-        ...pkg.devDependencies,
-      }),
+      external: (id: string) => {
+        // Check if the id starts with any of the external packages
+        return externalPackages.some(pkg => id === pkg || id.startsWith(`${pkg}/`));
+      },
       input: Object.fromEntries(
         glob.sync("lib/**/*.{ts,tsx}").map((file) => [
           // The name of the entry point

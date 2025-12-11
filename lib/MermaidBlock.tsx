@@ -1,7 +1,6 @@
 import { createReactBlockSpec } from "@blocknote/react";
 import {
   BlockNoteEditor,
-  insertOrUpdateBlock,
   PropSchema,
   defaultProps,
   BlockConfig,
@@ -671,9 +670,16 @@ export const insertMermaid = () => ({
   >(
     editor: BlockNoteEditor<BSchema>
   ) => {
-    insertOrUpdateBlock(editor, {
-      type: TYPE,
-    });
+    const currentBlock = editor.getTextCursorPosition().block;
+    editor.insertBlocks(
+      [
+        {
+          type: TYPE,
+        },
+      ],
+      currentBlock,
+      "after"
+    );
   },
   aliases: ["mermaid"],
   icon: <MdNote />,
